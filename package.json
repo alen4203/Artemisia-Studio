@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "deploy": "gh-pages -d out"
   },
   "dependencies": {
     "@types/node": "18.15.11",
@@ -23,6 +24,7 @@
     "typescript": "5.0.4"
   },
   "devDependencies": {
+    "gh-pages": "^6.3.0",
     "prettier": "3.0.0"
   }
 }
