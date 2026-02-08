@@ -50,5 +50,7 @@ export const coupons: Coupon[] = [
 ];
 
 export const findCouponByCode = (code: string): Coupon | undefined => {
-  return coupons.find((coupon) => coupon.code.toUpperCase() === code.toUpperCase());
+  return coupons.find(
+    (coupon) => coupon.code.toUpperCase() === code.toUpperCase()
+  );
 };

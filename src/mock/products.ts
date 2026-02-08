@@ -1,8 +1,8 @@
 import type { ProductInfo } from '@/model/productModel';
 
-export const products: ProductInfo[] = [
+export const candlesProducts: ProductInfo[] = [
   {
-    id: '1',
+    id: '01',
     name: '時空和解書',
     price: 500,
     category: '能量加強',
@@ -11,7 +11,7 @@ export const products: ProductInfo[] = [
     images: ['/images/productImage.svg', '/images/productImage.svg'],
   },
   {
-    id: '2',
+    id: '02',
     name: '彩虹沐浴',
     price: 500,
     category: '能量加強',
@@ -20,7 +20,7 @@ export const products: ProductInfo[] = [
     images: ['/images/productImage.svg', '/images/productImage.svg'],
   },
   {
-    id: '3',
+    id: '03',
     name: '戰勝永夜',
     price: 500,
     category: '能量加強',
@@ -29,7 +29,7 @@ export const products: ProductInfo[] = [
     images: ['/images/productImage.svg', '/images/productImage.svg'],
   },
   {
-    id: '4',
+    id: '04',
     name: '巨靈神的誕生',
     price: 500,
     category: '香氛療癒',
@@ -38,7 +38,7 @@ export const products: ProductInfo[] = [
     images: ['/images/productImage.svg', '/images/productImage.svg'],
   },
   {
-    id: '5',
+    id: '05',
     name: '雅典娜的夜晚',
     price: 500,
     category: '香氛療癒',
@@ -47,7 +47,7 @@ export const products: ProductInfo[] = [
     images: ['/images/productImage.svg', '/images/productImage.svg'],
   },
   {
-    id: '6',
+    id: '06',
     name: '甜美擁簇的夏日',
     price: 500,
     category: '香氛療癒',
@@ -56,7 +56,7 @@ export const products: ProductInfo[] = [
     images: ['/images/productImage.svg', '/images/productImage.svg'],
   },
   {
-    id: '7',
+    id: '07',
     name: '可愛蠟燭小托盤',
     price: 500,
     category: '美麗周邊',
@@ -65,7 +65,7 @@ export const products: ProductInfo[] = [
     images: ['/images/productImage.svg', '/images/productImage.svg'],
   },
   {
-    id: '8',
+    id: '08',
     name: '花花字母夜燈',
     price: 500,
     category: '美麗周邊',
@@ -73,4 +73,160 @@ export const products: ProductInfo[] = [
     featuredImage: '/images/productImage.svg',
     images: ['/images/productImage.svg', '/images/productImage.svg'],
   },
+];
+
+export const oilProducts: ProductInfo[] = [
+  {
+    id: '11',
+    name: '時空和解書',
+    price: 500,
+    category: '能量加強',
+    description: '時空和解書',
+    featuredImage: '/images/productImage.svg',
+    images: ['/images/productImage.svg', '/images/productImage.svg'],
+  },
+  {
+    id: '12',
+    name: '彩虹沐浴',
+    price: 500,
+    category: '能量加強',
+    description: '彩虹沐浴',
+    featuredImage: '/images/productImage.svg',
+    images: ['/images/productImage.svg', '/images/productImage.svg'],
+  },
+  {
+    id: '13',
+    name: '戰勝永夜',
+    price: 500,
+    category: '能量加強',
+    description: '戰勝永夜',
+    featuredImage: '/images/productImage.svg',
+    images: ['/images/productImage.svg', '/images/productImage.svg'],
+  },
+  {
+    id: '14',
+    name: '巨靈神的誕生',
+    price: 500,
+    category: '香氛療癒',
+    description: '巨靈神的誕生',
+    featuredImage: '/images/productImage.svg',
+    images: ['/images/productImage.svg', '/images/productImage.svg'],
+  },
+  {
+    id: '15',
+    name: '雅典娜的夜晚',
+    price: 500,
+    category: '香氛療癒',
+    description: '雅典娜的夜晚',
+    featuredImage: '/images/productImage.svg',
+    images: ['/images/productImage.svg', '/images/productImage.svg'],
+  },
+  {
+    id: '16',
+    name: '甜美擁簇的夏日',
+    price: 500,
+    category: '香氛療癒',
+    description: '甜美擁簇的夏日',
+    featuredImage: '/images/productImage.svg',
+    images: ['/images/productImage.svg', '/images/productImage.svg'],
+  },
+  {
+    id: '17',
+    name: '擴香石',
+    price: 500,
+    category: '美麗周邊',
+    description: '擴香石',
+    featuredImage: '/images/productImage.svg',
+    images: ['/images/productImage.svg', '/images/productImage.svg'],
+  },
+  {
+    id: '18',
+    name: '空間噴霧',
+    price: 500,
+    category: '美麗周邊',
+    description: '空間噴霧',
+    featuredImage: '/images/productImage.svg',
+    images: ['/images/productImage.svg', '/images/productImage.svg'],
+  },
+];
+
+export const crystalProducts: ProductInfo[] = [
+  {
+    id: '21',
+    name: '時空和解書',
+    price: 500,
+    category: '能量加強',
+    description: '時空和解書',
+    featuredImage: '/images/productImage.svg',
+    images: ['/images/productImage.svg', '/images/productImage.svg'],
+  },
+  {
+    id: '22',
+    name: '彩虹沐浴',
+    price: 500,
+    category: '能量加強',
+    description: '彩虹沐浴',
+    featuredImage: '/images/productImage.svg',
+    images: ['/images/productImage.svg', '/images/productImage.svg'],
+  },
+  {
+    id: '23',
+    name: '戰勝永夜',
+    price: 500,
+    category: '能量加強',
+    description: '戰勝永夜',
+    featuredImage: '/images/productImage.svg',
+    images: ['/images/productImage.svg', '/images/productImage.svg'],
+  },
+  {
+    id: '24',
+    name: '巨靈神的誕生',
+    price: 500,
+    category: '香氛療癒',
+    description: '巨靈神的誕生',
+    featuredImage: '/images/productImage.svg',
+    images: ['/images/productImage.svg', '/images/productImage.svg'],
+  },
+  {
+    id: '25',
+    name: '雅典娜的夜晚',
+    price: 500,
+    category: '香氛療癒',
+    description: '雅典娜的夜晚',
+    featuredImage: '/images/productImage.svg',
+    images: ['/images/productImage.svg', '/images/productImage.svg'],
+  },
+  {
+    id: '26',
+    name: '甜美擁簇的夏日',
+    price: 500,
+    category: '香氛療癒',
+    description: '甜美擁簇的夏日',
+    featuredImage: '/images/productImage.svg',
+    images: ['/images/productImage.svg', '/images/productImage.svg'],
+  },
+  {
+    id: '27',
+    name: '可愛蠟燭小托盤',
+    price: 500,
+    category: '美麗周邊',
+    description: '可愛蠟燭小托盤',
+    featuredImage: '/images/productImage.svg',
+    images: ['/images/productImage.svg', '/images/productImage.svg'],
+  },
+  {
+    id: '28',
+    name: '花花字母夜燈',
+    price: 500,
+    category: '美麗周邊',
+    description: '花花字母夜燈',
+    featuredImage: '/images/productImage.svg',
+    images: ['/images/productImage.svg', '/images/productImage.svg'],
+  },
+];
+
+export const products: ProductInfo[] = [
+  ...candlesProducts,
+  ...oilProducts,
+  ...crystalProducts,
 ];

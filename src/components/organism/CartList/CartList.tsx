@@ -1,6 +1,7 @@
 import { FC, useContext } from 'react';
 import { useRouter } from 'next/router';
 import CartContext from '@/context/CartContext';
+import { useCurrency } from '@/context/CurrencyContext';
 import CartItemCard from '@/components/molecule/CartItemCard/CartItemCard';
 import { CartItem } from '@/types/cart';
 import { ProductInfo } from '@/model/productModel';
@@ -12,6 +13,7 @@ type CartListProps = {
 
 const CartList: FC<CartListProps> = ({ featuredProducts, onShowToast }) => {
   const { cartState, updateQuantity, removeItem } = useContext(CartContext);
+  const { convertPrice } = useCurrency();
   const router = useRouter();
 
   const handleIncrement = (item: CartItem) => {
@@ -44,9 +46,7 @@ const CartList: FC<CartListProps> = ({ featuredProducts, onShowToast }) => {
         <h2 className="text-2xl font-bold mb-2 text-gray-800">
           Your cart is empty
         </h2>
-        <p className="text-gray-500 mb-6">
-          Add some products to get started!
-        </p>
+        <p className="text-gray-500 mb-6">Add some products to get started!</p>
         <button
           onClick={handleContinueShopping}
           className="px-6 py-3 bg-blue-500 text-white rounded-md hover:bg-blue-600 font-medium"
@@ -75,7 +75,7 @@ const CartList: FC<CartListProps> = ({ featuredProducts, onShowToast }) => {
                     />
                   </div>
                   <h4 className="font-semibold text-sm mb-1">{product.name}</h4>
-                  <p className="text-blue-500 font-medium">${product.price}</p>
+                  <p className="text-blue-500 font-medium">{convertPrice(product.price).formatted}</p>
                 </button>
               ))}
             </div>

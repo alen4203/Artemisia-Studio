@@ -1,8 +1,7 @@
 import ImageGallery from '@/components/organism/ImageGallery/ImageGallery';
 import BrandIntro from '@/components/organism/BrandIntro/BrandIntro';
-import AppearAnimateSection from '@/components/AppearAnimateSection';
 
-export default function IndexPage() {
+export default function ActivityHighlightsPage() {
   const homeImages = [
     { src: '/images/1600x900.svg', alt: 'Candle Collection 1' },
     { src: '/images/1600x900.svg', alt: 'Candle Collection 2' },
@@ -13,9 +12,7 @@ export default function IndexPage() {
     <div className="w-full flex flex-col">
       <ImageGallery images={homeImages} />
       <div className="mx-4 tablet:mx-10 flex flex-col items-center">
-        <AppearAnimateSection delay={300}>
-          <BrandIntro />
-        </AppearAnimateSection>
+        <BrandIntro />
       </div>
     </div>
   );

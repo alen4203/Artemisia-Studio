@@ -1,8 +1,6 @@
-import { FC, ReactComponentElement } from 'react';
-
 import Head from 'next/head';
 
-export default function Meta(): ReactComponentElement<FC, null> {
+export default function Meta() {
   return (
     <Head>
       <meta charSet="UTF-8" />

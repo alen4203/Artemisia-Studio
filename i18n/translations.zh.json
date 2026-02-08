@@ -1,0 +1,82 @@
+{
+  "navbar": {
+    "home": "首頁",
+    "service": "服務",
+    "products": "產品",
+    "highlights": "活動花絮",
+    "aboutMe": "關於我",
+    "signIn": "登入",
+    "signUp": "註冊",
+    "brand": "Artemisia's Studio"
+  },
+  "home": {
+    "coreValues": "品牌主訴",
+    "intro1": "在這片土地、這個星球中，一處陪伴你找回自身力量的地方。",
+    "intro2": "任何難關都可以靠自己的力量克服，因為靈魂並不會設定無法破解的關卡給每個人。",
+    "intro3": "所以在這裡的任何服務包含命理、能量療癒、訊息上的接軌溝通，都只是為了讓你「自癒」的一個過程，請勿把還沒準備好面對「現實」的自己，一味的寄託在任何人和服務上面，那將會是一件令人悲傷的事。",
+    "intro4": "我陪你一起走過的路都是養分，只為了你可以「好」以及「更好」。"
+  },
+  "products": {
+    "ourCollection": "我們的系列",
+    "curatedSelection": "玫儒精選",
+    "candles": "蠟燭",
+    "essentialOils": "精油",
+    "crystals": "水晶邀請"
+  },
+  "services": {
+    "heroTitle": "精選蠟燭服務",
+    "heroSubtitle": "通過我們獨家的研討會和定制活動服務體驗蠟燭製作的藝術。為重要的時刻精心製作。",
+    "bookConsultation": "預約諮詢",
+    "purpleStarAstrology": "紫微斗數",
+    "integratedEnergyTherapy": "大天使IET綜合能量療法",
+    "petTelepathy": "寵物溝通",
+    "magneticFieldCleansing": "空間淨化",
+    "customProductConsulting": "客製商品諮詢",
+    "workshop": "Workshop",
+    "gridDescription": "了解更多關於我們的服務，以及它如何為您的生活帶來光明。"
+  },
+  "aboutMe": {
+    "background": {
+      "title": "背景",
+      "point1": {
+        "title": "理學碩士",
+        "line1": "世界百大畢業",
+        "line2": "一直以來都是念理工科系"
+      },
+      "point": {
+        "title": "外商軟體工程師/專案經理",
+        "line1": "曾任台灣最大外商的軟體工程師及專案經理",
+        "line2": "後續一直於外商軟體專案經理的職涯道路發展"
+      }
+    },
+    "personality": {
+      "title": "個性特質",
+      "point1": {
+        "title": "龜毛加三級",
+        "desc": "對細節吹毛求疵的完美主義者,人生中最大課題是學會”放鬆“。"
+      },
+      "point2": {
+        "title": "講求邏輯",
+        "desc": "骨子裡充滿“眼見為憑”的驗證心理,有時候被衝擊到還是會保持懷疑態度。"
+      },
+      "point3": {
+        "title": "開放式觀點",
+        "desc": "對待新的事物採取開放式的狀態在探索。"
+      },
+      "point4": {
+        "title": "敏感體質",
+        "desc": "有點玄學上的敏感體質但並非大師，也因此走向汲取各種玄學相關技能的道路。"
+      },
+      "point5": {
+        "title": "溫暖真誠",
+        "desc": "認為真誠才是在人生中最值得肯定的待人之道。"
+      }
+    }
+  },
+  "common": {
+    "welcome": "歡迎",
+    "readMore": "繼續閱讀...",
+    "showLess": "收起內容",
+    "bookNow": "點我預約"
+  }
+}

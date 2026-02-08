@@ -9,21 +9,23 @@ import { ParsedUrlQuery } from 'querystring';
 import type { ProductInfo } from '@/model/productModel';
 import Layout from '@/components/Layout';
 import CartContext from '@/context/CartContext';
+import { useCurrency } from '@/context/CurrencyContext';
+import { products } from '@/mock/products';
 
 const ProductPage = ({
   product,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
-  const { addItem, removeItem, updateQuantity, getItemInfoFromCart } = useContext(CartContext);
+  const { addItem, removeItem, updateQuantity, getItemInfoFromCart } =
+    useContext(CartContext);
+  const { convertPrice } = useCurrency();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [quantity, setQuantity] = useState(1);
   const handlePrev = () => {
-    // TODO: implement handlePrev
-    setCurrentImageIndex(currentImageIndex - 1)
-  }
+    setCurrentImageIndex(currentImageIndex - 1);
+  };
   const handleNext = () => {
-    // TODO: implement handleNext
-    setCurrentImageIndex(currentImageIndex + 1)
-  }
+    setCurrentImageIndex(currentImageIndex + 1);
+  };
   const handleAddToCart = () => {
     addItem({
       id: product.id,
@@ -32,8 +34,8 @@ const ProductPage = ({
       category: product.category,
       featuredImage: product.featuredImage,
       quantity: quantity,
-    })
-  }
+    });
+  };
 
   return (
     <Layout>
@@ -46,11 +48,15 @@ const ProductPage = ({
                 className={`flex h-full transition-transform duration-500 ease-out`}
                 style={{
                   width: `${product.images.length * 100}%`,
-                  transform: `translateX(${-100 * currentImageIndex / product.images.length}%)`
+                  transform: `translateX(${(-100 * currentImageIndex) / product.images.length
+                    }%)`,
                 }}
               >
                 {product.images.map((image, index) => (
-                  <div key={index} className="relative w-full h-full flex-shrink-0">
+                  <div
+                    key={index}
+                    className="relative w-full h-full flex-shrink-0"
+                  >
                     <Image
                       src={image}
                       alt={`${product.name} - View ${index + 1}`}
@@ -86,27 +92,39 @@ const ProductPage = ({
 
           {/* Right Column: Details */}
           <div className="w-full desktop:w-1/2 flex flex-col pt-4">
-            <span className="text-blue-600 font-bold tracking-widest uppercase text-sm mb-4">{product.category}</span>
-            <h1 className="text-4xl desktop:text-5xl font-extrabold text-gray-900 mb-6 leading-tight">{product.name}</h1>
-            <p className="text-3xl font-medium text-gray-900 mb-8">{product.price}</p>
+            <span className="text-blue-600 font-bold tracking-widest uppercase text-sm mb-4">
+              {product.category}
+            </span>
+            <h1 className="text-4xl desktop:text-5xl font-extrabold text-gray-900 mb-6 leading-tight">
+              {product.name}
+            </h1>
+            <p className="text-3xl font-medium text-gray-900 mb-8">
+              {convertPrice(product.price).formatted}
+            </p>
 
             <div className="w-full h-px bg-gray-200 mb-8" />
 
-            <p className="text-lg text-gray-600 leading-relaxed mb-10">{product.description}</p>
+            <p className="text-lg text-gray-600 leading-relaxed mb-10">
+              {product.description}
+            </p>
 
             <div className="flex flex-col gap-6">
               <div className="flex items-center justify-start gap-6">
                 <span className="text-gray-900 font-semibold">Quantity</span>
                 <div className="flex items-center border border-gray-300 rounded-full px-2 py-1">
                   <button
-                    onClick={() => setQuantity(prev => prev === 0 ? 0 : prev - 1)}
+                    onClick={() =>
+                      setQuantity((prev) => (prev === 0 ? 0 : prev - 1))
+                    }
                     className="w-10 h-10 flex items-center justify-center text-gray-500 hover:text-black hover:bg-gray-100 rounded-full transition-colors"
                   >
                     -
                   </button>
-                  <span className="w-12 text-center font-bold text-lg">{quantity}</span>
+                  <span className="w-12 text-center font-bold text-lg">
+                    {quantity}
+                  </span>
                   <button
-                    onClick={() => setQuantity(prev => prev + 1)}
+                    onClick={() => setQuantity((prev) => prev + 1)}
                     className="w-10 h-10 flex items-center justify-center text-gray-500 hover:text-black hover:bg-gray-100 rounded-full transition-colors"
                   >
                     +
@@ -120,7 +138,7 @@ const ProductPage = ({
               >
                 <span>Add to Cart</span>
                 <span>•</span>
-                <span>{product.price}</span>
+                <span>{convertPrice(product.price).formatted}</span>
               </button>
 
               <p className="text-center text-sm text-gray-500 mt-4">
@@ -139,8 +157,6 @@ export default ProductPage;
 interface Params extends ParsedUrlQuery {
   productId: string;
 }
-
-import { products } from '@/mock/products';
 
 export const getStaticProps: GetStaticProps<{
   product: ProductInfo;
@@ -167,7 +183,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   }));
 
   return {
-    paths: paths,
+    paths,
     fallback: false,
   };
 };

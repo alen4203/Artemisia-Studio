@@ -1,6 +1,5 @@
-import { FC, ReactComponentElement, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
-
 
 interface ImageGalleryProps {
   images: {
@@ -9,7 +8,7 @@ interface ImageGalleryProps {
   }[];
 }
 
-export default function ImageGallery({ images }: ImageGalleryProps): ReactComponentElement<FC, ImageGalleryProps> {
+export default function ImageGallery({ images }: ImageGalleryProps) {
   const [currentImage, setCurrentImage] = useState(0);
 
   const goTo = (index: number) => {
@@ -33,14 +32,13 @@ export default function ImageGallery({ images }: ImageGalleryProps): ReactCompon
     <>
       <div className="w-full relative overflow-hidden">
         <div
-          className={`flex w-[${100 * images.length}%] transition-transform duration-500`}
+          className={`flex w-[${
+            100 * images.length
+          }%] transition-transform duration-500`}
           style={{ transform: `translateX(${-100 * currentImage}%)` }}
         >
           {images.map((image, index) => (
-            <div
-              key={index}
-              className={`relative min-w-full h-[600px]`}
-            >
+            <div key={index} className={`relative min-w-full h-[600px]`}>
               <Image
                 src={image.src}
                 alt={image.alt}
@@ -55,8 +53,11 @@ export default function ImageGallery({ images }: ImageGalleryProps): ReactCompon
             <button
               key={index}
               onClick={() => goTo(index)}
-              className={`w-3 h-3 rounded-full transition-all ${index === currentImage ? 'bg-white scale-110' : 'bg-white/50 hover:bg-white/80'
-                }`}
+              className={`w-3 h-3 rounded-full transition-all ${
+                index === currentImage
+                  ? 'bg-white scale-110'
+                  : 'bg-white/50 hover:bg-white/80'
+              }`}
               aria-label={`Go to slide ${index + 1}`}
             />
           ))}
@@ -65,4 +66,3 @@ export default function ImageGallery({ images }: ImageGalleryProps): ReactCompon
     </>
   );
 }
-

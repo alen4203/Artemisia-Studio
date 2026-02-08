@@ -6,17 +6,18 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "deploy": "gh-pages -d out"
+    "lint": "next lint --fix && prettier --write \"./**/*.{js,jsx,ts,tsx,json,md}\"",
+    "deploy": "next build && firebase deploy"
   },
   "dependencies": {
+    "@lottiefiles/dotlottie-react": "^0.17.13",
     "@types/node": "18.15.11",
-    "@types/react": "18.0.33",
     "autoprefixer": "10.4.14",
     "eslint": "8.38.0",
     "eslint-config-next": "13.3.0",
     "firebase": "^9.19.1",
     "next": "13.3.0",
+    "next-export-i18n": "2.1.0",
     "postcss": "8.4.21",
     "react": "18.2.0",
     "react-dom": "18.2.0",
@@ -24,7 +25,8 @@
     "typescript": "5.0.4"
   },
   "devDependencies": {
-    "gh-pages": "^6.3.0",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
     "prettier": "3.0.0"
   }
 }

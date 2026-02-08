@@ -98,7 +98,10 @@ export const CartProvider: FC<{ children: React.ReactNode }> = ({
         newState = {
           ...state,
           cart: filteredCart,
-          totalItems: filteredCart.reduce((acc, item) => acc + item.quantity, 0),
+          totalItems: filteredCart.reduce(
+            (acc, item) => acc + item.quantity,
+            0
+          ),
           totalPrice: removeSubtotal,
           discountAmount: removeDiscount,
           shippingFee: removeShipping,
@@ -177,7 +180,10 @@ export const CartProvider: FC<{ children: React.ReactNode }> = ({
     if (savedCart) {
       try {
         const parsedCart = JSON.parse(savedCart);
-        dispatch({ type: CartReducerActionType.LOAD_CART, payload: parsedCart });
+        dispatch({
+          type: CartReducerActionType.LOAD_CART,
+          payload: parsedCart,
+        });
       } catch (error) {
         console.error('Failed to load cart from localStorage:', error);
       }

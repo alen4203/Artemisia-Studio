@@ -3,10 +3,12 @@ import { useRouter } from 'next/router';
 import CartContext from '@/context/CartContext';
 import CouponInput from '@/components/molecule/CouponInput/CouponInput';
 import { formatPrice, calculateTotal } from '@/utils/priceCalculator';
+import { useCurrency } from '@/context/CurrencyContext';
 import { CouponType } from '@/types/coupon';
 
 const CartSummary: FC = () => {
   const { cartState, applyCoupon, removeCoupon } = useContext(CartContext);
+  const { convertPrice } = useCurrency();
   const router = useRouter();
 
   const subtotal = cartState.totalPrice;
@@ -38,13 +40,13 @@ const CartSummary: FC = () => {
       <div className="space-y-3 mb-4 pb-4 border-b border-gray-300">
         <div className="flex justify-between text-gray-700">
           <span>Subtotal</span>
-          <span>{formatPrice(subtotal)}</span>
+          <span>{convertPrice(subtotal).formatted}</span>
         </div>
 
         {discount > 0 && (
           <div className="flex justify-between text-green-600 font-medium">
             <span>Discount</span>
-            <span>-{formatPrice(discount)}</span>
+            <span>-{convertPrice(discount).formatted}</span>
           </div>
         )}
 
@@ -54,14 +56,14 @@ const CartSummary: FC = () => {
             {hasFreeShipping ? (
               <span className="text-green-600 font-medium">FREE</span>
             ) : (
-              formatPrice(shipping)
+              convertPrice(shipping).formatted
             )}
           </span>
         </div>
 
         {subtotal < 500 && !hasFreeShipping && (
           <p className="text-xs text-gray-500">
-            Add {formatPrice(500 - subtotal)} more for free shipping
+            Add {convertPrice(500 - subtotal).formatted} more for free shipping
           </p>
         )}
       </div>
@@ -69,7 +71,7 @@ const CartSummary: FC = () => {
       {/* Total */}
       <div className="flex justify-between text-xl font-bold mb-6 text-gray-800">
         <span>Total</span>
-        <span>{formatPrice(total)}</span>
+        <span>{convertPrice(total).formatted}</span>
       </div>
 
       {/* Checkout Button */}

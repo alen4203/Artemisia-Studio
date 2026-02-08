@@ -65,7 +65,9 @@ const CouponInput: FC<CouponInputProps> = ({
             <p className="text-sm font-semibold text-green-700">
               {appliedCoupon.code}
             </p>
-            <p className="text-xs text-green-600">{appliedCoupon.description}</p>
+            <p className="text-xs text-green-600">
+              {appliedCoupon.description}
+            </p>
           </div>
           <button
             onClick={handleRemove}

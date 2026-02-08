@@ -1,4 +1,4 @@
-import { FC, ReactComponentElement, ReactNode } from 'react';
+import { ReactNode } from 'react';
 
 import Meta from './Meta';
 import Navbar from './organism/Navbar/Navbar';
@@ -8,9 +8,7 @@ interface Props {
   children: ReactNode;
 }
 
-export default function Layout({
-  children,
-}: Props): ReactComponentElement<FC, Props> {
+export default function Layout({ children }: Props) {
   return (
     <>
       <Meta />

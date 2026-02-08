@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { CartItem } from '@/types/cart';
 import { formatPrice } from '@/utils/priceCalculator';
+import { useCurrency } from '@/context/CurrencyContext';
 import RemoveItemModal from '@/components/atom/Modal/RemoveItemModal';
 
 type CartItemCardProps = {
@@ -18,6 +19,7 @@ const CartItemCard: FC<CartItemCardProps> = ({
   onDecrement,
   onRemove,
 }) => {
+  const { convertPrice } = useCurrency();
   const [showRemoveModal, setShowRemoveModal] = useState(false);
 
   const handleIncrement = () => {
@@ -49,7 +51,10 @@ const CartItemCard: FC<CartItemCardProps> = ({
     <>
       <div className="flex flex-col tablet:flex-row gap-4 p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
         {/* Product Image */}
-        <Link href={`/products/${item.id}`} className="relative w-full tablet:w-32 h-32 flex-shrink-0">
+        <Link
+          href={`/products/${item.id}`}
+          className="relative w-full tablet:w-32 h-32 flex-shrink-0"
+        >
           <Image
             src={item.featuredImage}
             alt={item.name}
@@ -66,7 +71,7 @@ const CartItemCard: FC<CartItemCardProps> = ({
             </Link>
             <p className="text-sm text-gray-500 mb-2">{item.category}</p>
             <p className="text-base font-medium text-gray-700">
-              {formatPrice(item.price)} each
+              {convertPrice(item.price).formatted} each
             </p>
           </div>
 
@@ -130,14 +135,14 @@ const CartItemCard: FC<CartItemCardProps> = ({
         {/* Item Total - Desktop */}
         <div className="hidden tablet:flex flex-col items-end justify-between">
           <p className="text-xl font-bold text-gray-800">
-            {formatPrice(itemTotal)}
+            {convertPrice(itemTotal).formatted}
           </p>
         </div>
 
         {/* Item Total - Mobile */}
         <div className="tablet:hidden flex justify-end mt-2">
           <p className="text-xl font-bold text-gray-800">
-            {formatPrice(itemTotal)}
+            {convertPrice(itemTotal).formatted}
           </p>
         </div>
       </div>

@@ -1,5 +1,3 @@
-import { FC, ReactComponentElement } from 'react';
-
-export default function Footer(): ReactComponentElement<FC, null> {
-  return <div>This is a footer</div>;
+export default function Footer() {
+  return <div>© 2026 Artemisia All Rights Reserved.</div>;
 }

@@ -1,0 +1,82 @@
+{
+  "navbar": {
+    "home": "Home",
+    "service": "Service",
+    "products": "Products",
+    "highlights": "Highlights",
+    "aboutMe": "About Me",
+    "signIn": "Sign In",
+    "signUp": "Sign Up",
+    "brand": "Artemisia's Studio"
+  },
+  "home": {
+    "coreValues": "Core Values",
+    "intro1": "A grounded space on this planet that supports you in reconnecting with your inner strength.",
+    "intro2": "Every challenge can be met through your own capacity, as the soul never presents lessons beyond what you are able to integrate.",
+    "intro3": "All services provided here—including divination, energy healing, and intuitive guidance—are designed to support your self-healing process. They are not meant to replace personal responsibility or readiness to face reality, as true healing cannot be outsourced.",
+    "intro4": "The path we walk together is nourishment—so that you may be well, and continue becoming better."
+  },
+  "products": {
+    "ourCollection": "Our Collection",
+    "curatedSelection": "Curated Selection",
+    "candles": "Candles",
+    "essentialOils": "Essential Oils",
+    "crystals": "Crystals"
+  },
+  "services": {
+    "heroTitle": "Premium Candle Services",
+    "heroSubtitle": "Experience the art of candle making with our exclusive workshops and bespoke event services. Crafted for moments that matter.",
+    "bookConsultation": "Book a Consultation",
+    "purpleStarAstrology": "Purple Star Astrology",
+    "integratedEnergyTherapy": "Integrated Energy Therapy",
+    "petTelepathy": "Pet Telepathy",
+    "magneticFieldCleansing": "Space Cleansing",
+    "customProductConsulting": "Custom Product Consulting",
+    "workshop": "Workshop",
+    "gridDescription": "Discover more about our service and how it can bring light to your life."
+  },
+  "aboutMe": {
+    "background": {
+      "title": "背景",
+      "point1": {
+        "title": "理學碩士",
+        "line1": "世界百大畢業",
+        "line2": "一直以來都是念理工科系"
+      },
+      "point": {
+        "title": "外商軟體工程師/專案經理",
+        "line1": "曾任台灣最大外商的軟體工程師及專案經理",
+        "line2": "後續一直於外商軟體專案經理的職涯道路發展"
+      }
+    },
+    "personality": {
+      "title": "個性特質",
+      "point1": {
+        "title": "龜毛加三級",
+        "desc": "對細節吹毛求疵的完美主義者,人生中最大課題是學會”放鬆“。"
+      },
+      "point2": {
+        "title": "講求邏輯",
+        "desc": "骨子裡充滿“眼見為憑”的驗證心理,有時候被衝擊到還是會保持懷疑態度。"
+      },
+      "point3": {
+        "title": "開放式觀點",
+        "desc": "對待新的事物採取開放式的狀態在探索。"
+      },
+      "point4": {
+        "title": "敏感體質",
+        "desc": "有點玄學上的敏感體質但並非大師，也因此走向汲取各種玄學相關技能的道路。"
+      },
+      "point5": {
+        "title": "溫暖真誠",
+        "desc": "認為真誠才是在人生中最值得肯定的待人之道。"
+      }
+    }
+  },
+  "common": {
+    "welcome": "Welcome",
+    "readMore": "Read More",
+    "showLess": "Show Less",
+    "bookNow": "Book Now"
+  }
+}
