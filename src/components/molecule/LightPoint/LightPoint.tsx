@@ -21,13 +21,13 @@ export default function LightPoint({ personality, style, index = 0 }: LightPoint
 
   return (
     <div
-      className="absolute"
+      className={`absolute ${isOpen ? 'z-50' : 'z-0'}`}
       style={style}
       onMouseLeave={() => setIsOpen(false)}
     >
       {/* Light Point */}
       <button
-        className="light-point w-2 h-2 rounded-full bg-amber-400 cursor-pointer hover:scale-150 transition-transform relative z-0"
+        className="light-point w-3 h-3 rounded-full bg-amber-400 cursor-pointer hover:scale-150 transition-transform relative"
         style={{ animationDelay }}
         onMouseEnter={() => setIsOpen(true)}
         onClick={() => setIsOpen(!isOpen)}
@@ -36,7 +36,10 @@ export default function LightPoint({ personality, style, index = 0 }: LightPoint
 
       {/* Tooltip */}
       {isOpen && (
-        <div className="absolute z-10 left-1/2 -translate-x-1/2 bottom-full mb-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 p-3">
+        <div className="absolute left-1/2 -translate-x-1/2 bottom-full mb-2 w-60 bg-white/80 backdrop-blur-sm rounded-lg shadow-lg border border-gray-200 p-3">
+          {/* Arrow */}
+          <div className="absolute left-1/2 -translate-x-1/2 top-full w-0 h-0 border-l-8 border-r-8 border-t-8 border-l-transparent border-r-transparent border-t-white/80" />
+
           {/* Close Button */}
           <button
             className="absolute top-1 right-1 w-5 h-5 flex items-center justify-center text-gray-400 hover:text-gray-600 transition-colors"
@@ -59,15 +62,12 @@ export default function LightPoint({ personality, style, index = 0 }: LightPoint
           </button>
 
           {/* Content */}
-          <h4 className="font-semibold text-gray-800 text-sm pr-4 mb-1">
+          <h4 className="font-semibold text-[#896948] text-[24px] pr-4 mb-1">
             {personality.title}
           </h4>
-          <p className="text-gray-600 text-xs leading-relaxed">
+          <p className="text-[#896948] leading-relaxed">
             {personality.description}
           </p>
-
-          {/* Arrow */}
-          <div className="absolute left-1/2 -translate-x-1/2 top-full w-0 h-0 border-l-8 border-r-8 border-t-8 border-l-transparent border-r-transparent border-t-white" />
         </div>
       )}
     </div>
